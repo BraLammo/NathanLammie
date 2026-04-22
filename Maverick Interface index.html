@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Maverick Interface HomePage
+        </title>
+        <style>
+            .banner{
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+            }
+            .container{
+                width: 100%;
+                height: 250px;
+                position: relative;
+                /* ^ Makes web banner responsive */
+            }
+            .header{
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Segoe UI';
+                font-weight: bold;
+                color: aliceblue;
+            }
+            .header3{
+                text-align: center;
+                font-size: 25px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+                font-weight: bold;
+                color: aliceblue;
+            }
+            .text{
+                text-align: center;
+                font-family: 'Segoe UI';
+                color: darkgrey;
+            }
+            menu{
+                list-style: none;
+            }
+
+            hr{
+                border: none;
+                border-top: 5px double;
+                color: black;
+                align-self: center;
+                height: 5px;
+                overflow: visible;
+            }
+            .hr2{
+                border: none;
+                color: black;
+                align-self: center;
+                height: 5px;
+                overflow: visible;
+            }
+            .header2{
+                font-size: 60px;
+                text-align: center;
+                font-family: 'Segoe UI';
+                font-style: oblique;
+                font-weight: bolder;
+                color: darkgrey;
+            }
+            .subhead{
+                text-align: left;
+                font-family: 'Calibri';
+                margin-left: 1in;
+                font-weight: bold;
+                font-size: 35px;
+                padding: 0%;
+                color: black;
+            }
+            img{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                image-rendering: optimizeQuality;
+                border-image: fill;
+                align-items: center;
+                size: 50px;
+            }
+            h3{
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-style: oblique;
+                color: aliceblue;
+                text-align: center;
+                font-size: 19px;
+
+            }
+            ol{
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                color: aliceblue;
+            }
+            .topimage{
+                position: absolute;
+                display: block;
+                overflow: hidden;
+                transform: scale();
+                object-fit: cover;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+            img:hover .topimage{
+                opacity: 1; /*Smoothly Reveals top image when hovered over*/
+            }
+            .para{
+                text-align: center;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+                font-size: 25px;
+                color: aliceblue;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
+            }
+            .styledbutton{
+                border: 0;
+                line-height: 2.5;
+                font-family: 'Franklin Gothic Medium';
+                padding: 0 20px;
+                font-size: 1rem;
+                margin-left: auto;
+                margin-right: auto;
+                width: 25%;
+                display: block;
+                text-align: center;
+                color: white;
+                border-radius: 10px;
+                background-color:darkkhaki;
+            }
+            .styledbutton:hover{
+                color: cornsilk;
+                background-color: black;
+            }
+            footer{
+                background-color: black;
+                color: bisque;
+                font-family: Haettenschweiler;
+            }
+            .left{
+            text-align:left;
+            }
+            .footerimgadjust{
+
+            }
+            .right{
+            background-color: black;
+            text-align:right;
+            margin-right: auto;
+            padding:1cm;
+            font-family: Haettenschweiler;
+            color: bisque;
+            }
+            .centered{
+            text-align:center;
+            }
+            .navbar ul{ /*All 'ul' elements within the navbar class*/
+                list-style-type: none; /*This removes the bullet points.*/
+                background-color: black;
+                padding: 0px;
+                margin: 0px;
+                overflow: hidden;
+            }
+            .navbar a{ /*All 'a' elements within the navbar class*/
+                color: aliceblue;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                text-decoration: none; /*Removes text underline*/ 
+                padding: 15px;
+                display: block;
+                text-align: center;
+            }
+            .navbar a:hover{ 
+                transition:ease-in;
+                background-color: aliceblue;
+                color: darkslategray;
+            }
+            /*Time to turn vertical navbar to horizontal*/
+            .navbar li{ /*All 'li' elements within the navbar class*/
+                float:left;
+
+            }
+            
+            .submenu { /*Hiding sub-menu by default*/
+                display: none;
+                z-index: 999;
+                position: absolute;
+                background-color: black;
+            }
+            .dropdown:hover .submenu{
+                display: block;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body bgcolor="darkslategray">
+        <div class="container">
+            <img class="banner" src="c:\Users\Nathan Lammie\Pictures\Screenshots\Maverick Interface Logo 2.png" alt="Maverick Interface Logo Banner">
+        </div>
+        <!-- 'div' element acts as a content divider -->
+         <nav class="navbar">
+            <ul>
+                <li><a href="Maverick Interface index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Our Projects</a>
+                    <!--Creating sub-menu here-->
+                    <ul class="submenu">
+                        <li><a href="Maverick Interface FlowState.html">FlowState</a></li>
+                        <li><a href="Maverick Interface Aranaht.html">Aranaht</a></li>
+                        <li><a href="Maverick Interface Prime 5ive.html">Prime 5ive</a></li>
+                    </ul>
+                </li>
+                <li><a href="Maverick Interface About Us.html">About Us</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+
+         </nav>
+
+        <h1 class="header">Far From Average</h1>
+        <h2 class="header3">Creating Immersive Worlds Through Innovative Game Design</h2>
+        
+        <hr />
+
+        <h1 class="header2">FUTURE PROJECTS</h1>
+        <h2 class="subhead">Flow State</h2>
+        <h2 class="img">
+            <img src="C:\Users\Nathan Lammie\Pictures\Screenshots\Flow State Cover .png" alt="Flow State Cover" class="base image">
+            <br>
+            <button class="styledbutton">
+                <a href="Maverick Interface FlowState.html">Learn More</a>
+            </button>
+        </h2>
+
+        <hr class="hr2" />
+
+        <h2 class="subhead">Aranaht</h2>
+        <h2 class="img"><img src="C:/Users/Nathan Lammie/Downloads/Aranaht Cover.png" alt="Aranaht Cover">
+            <br>
+            <button class="styledbutton">
+                <a href="Maverick Interface Aranaht.html">Learn More</a>
+            </button>
+        </h2>
+
+        <hr class="hr2" />
+
+        <h2 class="subhead">Prime 5ive</h2>
+        <H2 class="img">
+            <img src="C:/Users/Nathan Lammie/Downloads/Black White Simple Modern Neon Griddy Bold Technology Pixel Electronics Store Logo (1).png" alt="Prime 5ive Cover">
+            <br>
+            <button class="styledbutton">
+                <a href="Maverick Interface Prime 5ive.html">Learn More</a>
+            </button>
+        </H2>
+        
+        <hr />
+
+        <h1 class="header2">LATEST NEWS</h1>
+        <p class="para">Stay updated to learn news about our latest projects!</p>
+
+        <hr />
+
+        <h1 class="header2">JOIN THE TEAM</h1>
+        <p class="para">We're looking for top level software and game developers. <br>
+            <br>
+            We welcome challenges and strive for growth, looking beyond ordinary measures
+            to achieve wonders way above the norm.
+            <br>
+            <br>
+            We're looking for energy and the thirst to succeed, with this we make it our upmost
+            interest to award our Maverick Members with the rewards they deserve, to make this place
+            truly something that we have all built together with everlasting memories.
+            <!-- Adding line break 'br' twice grants an extra line to show paragraph division. -->
+        </p>
+
+        <br>
+        <br>
+        <section class="para2">
+            <h3>How to Join</h3>
+            <ol>
+                <li>Click the 'Join Now' button</li>
+                <li>Fill out the credentials</li>
+                <li>Standby for an in-person interview where we run you through some tests</li>
+                <li>Once qualified, You're in.</li>
+            </ol>
+        </section>
+        <button class="styledbutton" popovertarget="contactForm">Join Team</button>
+
+        <div id="contactForm" popover>
+            <form>
+            <label for="fname">First Name: </label>
+            <input type="text" id="fname" value="">
+
+            <br>
+            <br>
+            <label for="lname">Last Name: </label>
+            <input type="text" id="lname" value="">
+
+            <br>
+            <br>
+            <label for="classroom">Phone: </label>
+            <input type="text" id="phone" value="">
+
+            <br>
+            <br>
+            <label for="form teacher">Email: </label>
+            <input type="text" id="email" value="">
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+    <footer>
+        <div>
+            <p class="left"><img height="30" width="40" src="C:/Users/Nathan Lammie/Pictures/Screenshots/Maverick Interface footer logo.png" alt=""></p>
+            <p class="centered">
+                <a href="Maverick Interface index.html">Home | </a>
+                <a href="Maverick Interface About Us.html">About Us | </a>
+                <a href="">Contact</a>
+            </p>
+            <p class="right">163 Main St., Cape Town <br>
+            Cape Town | South Africa</p>
+        </div>
+    </footer>
+    </body>
+</html>
